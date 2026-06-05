@@ -1,4 +1,4 @@
-def search_capitals(arg)
+def search_arg(arg)
 	states = {
 		"Oregon" => "OR",
 		"Alabama" => "AL",
@@ -15,17 +15,20 @@ def search_capitals(arg)
 	capital = capitals_cities[states[arg.capitalize]]
 	state = states.key(capitals_cities.key(arg.capitalize))
 	if capital
-		puts "#{capital} is the capital of #{arg} (akr: #{states[arg]})"
+		puts "#{capital} is the capital of #{arg.capitalize} (akr: #{states[arg.capitalize]})"
 	elsif state
-		puts "#{arg} is the capital of #{state} (akr: #{capitals_cities.key(arg)})"
+		puts "#{arg.capitalize} is the capital of #{state} (akr: #{capitals_cities.key(arg.capitalize)})"
 	else
-		puts "#{arg} is neither a capital city nor a state"
+		puts "#{arg.capitalize} is neither a capital city nor a state"
 	end
 end
 
 def main
 	if ARGV.length() == 1
-		search_capitals(ARGV[0])
+		args = ARGV[0].delete(" ").split(",").reject(&:empty?)
+		for i in args
+			search_arg(i)
+		end
 	end
 end
 
