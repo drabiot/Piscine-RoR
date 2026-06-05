@@ -1,11 +1,11 @@
 def hashing(array)
-	hashed = Hash.new
+	hash = Hash.new
 	
 	array.each do |name, score|
-		hashed[name] = score
+		hash[score] = name
 	end
 
-	puts hashed
+	return hash
 end
 
 def main
@@ -26,7 +26,8 @@ def main
 			['Carter' , 54],
 			['Casey' , 2]]
 
-	hashing(data)
+	hash = hashing(data)
+	hash.each { |key, value| puts "#{key} : #{value}" }
 end
 
 main
