@@ -12,7 +12,7 @@ def search_states(capital)
 		"CO" => "Denver"
 	}
 
-	state = states.key(capitals_cities.key(capital))
+	state = states.key(capitals_cities.key(capital.capitalize))
 	if state
 		puts state
 	else
