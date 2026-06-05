@@ -7,7 +7,7 @@ def create_head(f)
 	f.puts "\t<style>"
 	f.puts "\t\ttable { border-collapse: collapse; width: 100%; table-layout: fixed; }"
 	f.puts "\t\ttd { border: 1px solid black; padding: 4px; vertical-align: top; overflow: hidden; font-size: 11px; }"
-	f.puts "\t\th4 { margin: 0 0 5px 0; }"
+	f.puts "\t\th2 { margin: 0 0 5px 0; }"
 	f.puts "\t\tul { margin: 0; padding-left: 15px; }"
 	f.puts "\t</style>"
 	f.puts "</head>"
@@ -51,7 +51,7 @@ end
 
 def cell(f, el)
 	f.puts "\t\t\t<td>"
-	f.puts "\t\t\t\t<h4>#{el[:name]}</h4>"
+	f.puts "\t\t\t\t<h2>#{el[:name]}</h2>"
 	f.puts "\t\t\t\t<ul>"
 	f.puts "\t\t\t\t\t<li>No #{el[:number]}</li>"
 	f.puts "\t\t\t\t\t<li>#{el[:small]}</li>"
