@@ -1,0 +1,27 @@
+* {box-sizing: border-box;}
+body {font-family: 'Segoe UI', Arial, sans-serif; background: #f4f6f9; color: #1a1a2e; margin: 0; padding: 0;}
+h1 {font-size: 2rem; font-weight: 700; letter-spacing: 0.05em; color: #1a1a2e; margin-bottom: 4px; text-decoration: none;}
+h1 u {text-decoration: underline; text-underline-offset: 4px;}
+h2 {font-size: 1rem; font-weight: 400; color: #555; margin: 0 0 2px;}
+h3 {font-size: 0.85rem; font-weight: 400; color: #888; margin: 0 0 20px; letter-spacing: 0.06em; text-transform: uppercase;}
+table {border-collapse: separate; border-spacing: 3px; width: 100%; table-layout: fixed;}
+td {border: none; padding: 6px 7px; vertical-align: top; overflow: hidden; font-size: 10px; background: #ffffff; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.07); transition: transform 0.15s ease, box-shadow 0.15s ease; line-height: 1.4;}
+td:not([style*='border: 0px']):hover {transform: translateY(-2px) scale(1.04); box-shadow: 0 6px 16px rgba(0,0,0,0.15); z-index: 10; position: relative;}
+td[style*='border: 0px'] {background: transparent; box-shadow: none; padding: 0;}
+td h4 {margin: 0 0 4px 0; font-size: 11px; font-weight: 600; color: #1a1a2e; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+td ul {margin: 0; padding: 0; list-style: none;}
+td ul li {color: #444; line-height: 1.5;}
+td ul li:nth-child(1) {font-size: 9px; color: #999; font-weight: 500;}
+td ul li:nth-child(2) {font-size: 15px; font-weight: 700; color: #2a5caa; letter-spacing: 0.02em;}
+td ul li:nth-child(3) {font-size: 9px; color: #666;}
+td ul li:nth-child(4) {font-size: 8.5px; color: #aaa; margin-top: 1px;}
+tr td:nth-child(1):not([style*='border: 0px']) {border-top: 3px solid #e07b39;}
+tr td:nth-child(1):not([style*='border: 0px']) li:nth-child(2) {color: #b85e1f;}
+tr td:nth-child(2):not([style*='border: 0px']) {border-top: 3px solid #d4a017;}
+tr td:nth-child(2):not([style*='border: 0px']) li:nth-child(2) {color: #a07c0a;}
+tr td:nth-child(18):not([style*='border: 0px']) {border-top: 3px solid #8b5cf6; background: #faf8ff;}
+tr td:nth-child(18):not([style*='border: 0px']) li:nth-child(2) {color: #6d3fc8;}
+tr td:nth-child(13):not([style*='border: 0px']), tr td:nth-child(14):not([style*='border: 0px']), tr td:nth-child(15):not([style*='border: 0px']), tr td:nth-child(16):not([style*='border: 0px']), tr td:nth-child(17):not([style*='border: 0px']) {border-top: 3px solid #2a9d8f;}
+tr td:nth-child(13):not([style*='border: 0px']) li:nth-child(2), tr td:nth-child(14):not([style*='border: 0px']) li:nth-child(2), tr td:nth-child(15):not([style*='border: 0px']) li:nth-child(2), tr td:nth-child(16):not([style*='border: 0px']) li:nth-child(2), tr td:nth-child(17):not([style*='border: 0px']) li:nth-child(2) {color: #1a6b61;}
+tr td:nth-child(3):not([style*='border: 0px']), tr td:nth-child(4):not([style*='border: 0px']), tr td:nth-child(5):not([style*='border: 0px']), tr td:nth-child(6):not([style*='border: 0px']), tr td:nth-child(7):not([style*='border: 0px']), tr td:nth-child(8):not([style*='border: 0px']), tr td:nth-child(9):not([style*='border: 0px']), tr td:nth-child(10):not([style*='border: 0px']), tr td:nth-child(11):not([style*='border: 0px']), tr td:nth-child(12):not([style*='border: 0px']) {border-top: 3px solid #3a7bd5; background: #f8fbff;}
+tr td:nth-child(3):not([style*='border: 0px']) li:nth-child(2), tr td:nth-child(4):not([style*='border: 0px']) li:nth-child(2), tr td:nth-child(5):not([style*='border: 0px']) li:nth-child(2), tr td:nth-child(6):not([style*='border: 0px']) li:nth-child(2), tr td:nth-child(7):not([style*='border: 0px']) li:nth-child(2), tr td:nth-child(8):not([style*='border: 0px']) li:nth-child(2), tr td:nth-child(9):not([style*='border: 0px']) li:nth-child(2), tr td:nth-child(10):not([style*='border: 0px']) li:nth-child(2), tr td:nth-child(11):not([style*='border: 0px']) li:nth-child(2), tr td:nth-child(12):not([style*='border: 0px']) li:nth-child(2) {color: #1e5aaf;}
