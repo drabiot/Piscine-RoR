@@ -12,20 +12,25 @@ def search_arg(arg)
 		"CO" => "Denver"
 	}
 
-	capital = capitals_cities[states[arg.capitalize]]
-	state = states.key(capitals_cities.key(arg.capitalize))
+	arg = arg.split(/ |\_/).map(&:capitalize).join(" ").strip
+	if arg.empty?
+		return
+	end
+
+	capital = capitals_cities[states[arg]]
+	state = states.key(capitals_cities.key(arg))
 	if capital
-		puts "#{capital} is the capital of #{arg.capitalize} (akr: #{states[arg.capitalize]})"
+		puts "#{capital} is the capital of #{arg} (akr: #{states[arg]})"
 	elsif state
-		puts "#{arg.capitalize} is the capital of #{state} (akr: #{capitals_cities.key(arg.capitalize)})"
+		puts "#{arg} is the capital of #{state} (akr: #{capitals_cities.key(arg)})"
 	else
-		puts "#{arg.capitalize} is neither a capital city nor a state"
+		puts "#{arg} is neither a capital city nor a state"
 	end
 end
 
 def main
 	if ARGV.length() == 1
-		args = ARGV[0].delete(" ").split(",").reject(&:empty?)
+		args = ARGV[0].split(",")
 		for i in args
 			search_arg(i)
 		end
