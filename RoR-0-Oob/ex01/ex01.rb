@@ -3,6 +3,7 @@
 class Html
 	def initialize(file)
 		@page_name = "#{file}.html"
+		raise "A file named #{@page_name} already exists" if File.exist?(@page_name)
 
 		File.open(@page_name, 'w') do |f|
 			head(f)
@@ -20,12 +21,17 @@ class Html
 	end
 
 	def dump(string)
+		raise "There is no body tag in  #{@page_name}" unless File.read(@page_name).include?("<body>")
+		raise "The body has already been closed in #{@page_name}" if File.read(@page_name).include?("</body>")
+
 		File.open(@page_name, "a") do |f|
 			f.puts "\t<p>#{string}</p>"
 		end
 	end
 
 	def finish
+		raise "#{@page_name} has already been closed" if File.read(@page_name).include?("</body>")
+		
 		File.open(@page_name, "a") do |f|
 			f.puts "</body>"
 		end
