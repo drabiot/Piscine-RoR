@@ -4,7 +4,6 @@ class Html
 	def initialize(file)
 		@page_name = "#{file}.html"
 
-		content = File.join(File.dirname(__FILE__), @page_name)
 		File.open(@page_name, 'w') do |f|
 			head(f)
 		end
