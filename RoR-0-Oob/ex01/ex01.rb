@@ -1,3 +1,5 @@
+#!/usr/bin/env -S ruby -w
+
 class Html
 	def initialize(file)
 		@page_name = "#{file}.html"

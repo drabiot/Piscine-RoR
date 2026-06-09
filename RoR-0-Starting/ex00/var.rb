@@ -1,4 +1,4 @@
-#!/usr/bin/env ruby
+#!/usr/bin/env -S ruby -w
 
 def my_var
 	a = 10
