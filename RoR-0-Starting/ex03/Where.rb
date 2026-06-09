@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 def search_capitals(state)
 	states = {
 		"Oregon" => "OR",

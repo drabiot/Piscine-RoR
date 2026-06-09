@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 def create_style(f)
 	f.puts "* {box-sizing: border-box;}"
 	f.puts "body {font-family: 'Segoe UI', Arial, sans-serif; background: #f4f6f9; color: #1a1a2e; margin: 0; padding: 0;}"
@@ -125,6 +127,10 @@ def main
 	file = File.join(File.dirname(__FILE__), 'periodic_table.html')
 	style = File.join(File.dirname(__FILE__), 'periodic_table.css')
 	elements = parse_table
+
+	if elements.empty?
+		return
+	end
 
 	File.open(file, 'w') do |f|
 		create_head(f)

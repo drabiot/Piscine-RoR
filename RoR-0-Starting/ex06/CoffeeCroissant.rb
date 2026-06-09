@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 def hashing(array)
 	hash = Hash.new
 	

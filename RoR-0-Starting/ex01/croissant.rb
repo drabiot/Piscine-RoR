@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 def main
 	file = "numbers.txt"
 	unless File.exist?(file)

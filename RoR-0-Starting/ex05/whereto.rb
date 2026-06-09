@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 def search_arg(arg)
 	states = {
 		"Oregon" => "OR",
@@ -12,7 +14,7 @@ def search_arg(arg)
 		"CO" => "Denver"
 	}
 
-	arg = arg.split(/ |\_/).map(&:capitalize).join(" ").strip
+	arg = arg.split(/ |\_/).map(&:capitalize).reject(&:empty?).join(" ").strip
 	if arg.empty?
 		return
 	end
