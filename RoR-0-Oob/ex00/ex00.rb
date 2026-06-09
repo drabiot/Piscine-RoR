@@ -31,3 +31,11 @@ class Html
 		end
 	end
 end
+
+if $PROGRAM_NAME == __FILE__
+	a = Html.new("test")
+	10.times { |x| a.dump("titi_number#{x}") }
+	a.finish
+
+	puts File.read("test.html")
+end
