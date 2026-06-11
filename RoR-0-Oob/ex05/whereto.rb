@@ -61,5 +61,14 @@ end
 end
 
 if $PROGRAM_NAME == __FILE__
-	puts Html.new([Head.new([Title.new("Hello ground!")]), Body.new([H1.new("Oh no, not again!"), Img.new([], {'src':'http://i.imgur.com/pfp3T.jpg'}) ]) ])
+	toto = Html.new([Head.new([Title.new(Text.new("Hello ground!"))]),
+	Body.new([H1.new(Text.new("Oh no, not again!")), Img.new([],
+	{'src': Text.new('http://i.imgur.com/pfp3T.jpg')}) ]) ])
+	test = Page.new(toto)
+	test.valid?
+	tata = Html.new([Head.new([Title.new(Text.new("Hello ground!"))]),
+	Body.new([H1.new(Text.new("Oh no, not again!")), Img.new([],
+	{'src': Text.new('http://i.imgur.com/pfp3T.jpg')}) ]) ])
+	test2 = Page.new(tata)
+	test2.valid?
 end
