@@ -188,7 +188,7 @@ class Page
 					puts "#{GREEN}Text content is OK#{BASE}"
 					true
 				else
-					puts "#{GREEN}Text content is INVALID#{BASE}"
+					puts "#{RED}Text content is INVALID#{BASE}"
 					false
 				end
 
@@ -202,6 +202,8 @@ class Page
 end
 
 if $PROGRAM_NAME == __FILE__
+	puts "\n#{YELLOW}=== BASE TESTER ===#{BASE}"
+
 	toto = Html.new([Head.new([Title.new(Text.new("Hello ground!"))]),
 	Body.new([H1.new(Text.new("Oh no, not again!")), Img.new([],
 	{'src': Text.new('http://i.imgur.com/pfp3T.jpg')}) ]) ])
@@ -212,4 +214,55 @@ if $PROGRAM_NAME == __FILE__
 	{'src': Text.new('http://i.imgur.com/pfp3T.jpg')}) ]) ])
 	test2 = Page.new(tata)
 	test2.valid?
-end
+
+	puts "\n#{YELLOW}=== ERROR TESTER ===#{BASE}"
+
+    puts "\n[Error 1] Html without Head :"
+    err1 = Html.new([
+        Body.new([H1.new(Text.new("No Head"))])
+    ])
+    Page.new(err1).valid?
+
+    puts "\n[Error 2] Title with P and not a Text :"
+    err2 = Html.new([
+        Head.new([Title.new([P.new(Text.new("Invalid"))])]),
+        Body.new([H1.new(Text.new("Hello"))])
+    ])
+    Page.new(err2).valid?
+
+    puts "\n[Error 3] Img without src :"
+    err3 = Html.new([
+        Head.new([Title.new(Text.new("Test Img"))]),
+        Body.new([Img.new([], {'alt': Text.new('No src')})])
+    ])
+    Page.new(err3).valid?
+
+    puts "\n[Error 4] Tr with Th & Td :"
+    err4 = Html.new([
+        Head.new([Title.new(Text.new("Test Table"))]),
+        Body.new([
+            Table.new([
+                Tr.new([Th.new(Text.new("Header")), Td.new(Text.new("Data"))])
+            ])
+        ])
+    ])
+    Page.new(err4).valid?
+
+    puts "\n[Error 5] P with a Span :"
+    err5 = Html.new([
+        Head.new([Title.new(Text.new("Test P"))]),
+        Body.new([
+            P.new([Span.new(Text.new("Invalid"))])
+        ])
+    ])
+    Page.new(err5).valid?
+
+    puts "\n[Error 6] Ul with no Li :"
+    err6 = Html.new([
+        Head.new([Title.new(Text.new("Blank Ul"))]),
+        Body.new([
+            Ul.new([])
+        ])
+    ])
+    Page.new(err6).valid?
+	end

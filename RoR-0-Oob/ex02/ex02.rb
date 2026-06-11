@@ -64,7 +64,7 @@ end
 
 class Html
 	attr_reader :page_name
-	
+
 	def initialize(file)
 		@page_name = file
 
@@ -81,10 +81,9 @@ class Html
 
 	def head(f)
 		f.puts "<!DOCTYPE html>"
-		f.puts "<html lang=\"en\">"
+		f.puts "<html>"
 		f.puts "<head>"
-		f.puts "\t<meta charset=\"UTF-8\">"
-		f.puts "\t<title>#{@page_name}.html</title>"
+		f.puts "\t<title>#{@page_name}</title>"
 		f.puts "</head>"
 		f.puts "<body>"
 	end

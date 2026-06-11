@@ -2,10 +2,10 @@
 
 class Html
 	attr_reader :page_name
-	
+
 	def initialize(file)
 		@page_name = file
-		raise "A file named #{@page_name}.html already exists" if File.exist?("#{@page_name}.html")
+		raise "#{@page_name}.html already exist!" if File.exist?("#{@page_name}.html")
 
 		File.open("#{@page_name}.html", 'w') do |f|
 			head(f)
@@ -14,10 +14,9 @@ class Html
 
 	def head(f)
 		f.puts "<!DOCTYPE html>"
-		f.puts "<html lang=\"en\">"
+		f.puts "<html>"
 		f.puts "<head>"
-		f.puts "\t<meta charset=\"UTF-8\">"
-		f.puts "\t<title>#{@page_name}.html</title>"
+		f.puts "\t<title>#{@page_name}</title>"
 		f.puts "</head>"
 		f.puts "<body>"
 	end

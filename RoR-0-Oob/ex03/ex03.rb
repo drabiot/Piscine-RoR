@@ -45,7 +45,7 @@ if $PROGRAM_NAME == __FILE__
 	html	= Elem.new('html')
 	head	= Elem.new('head')
 	body	= Elem.new('body')
-	title	= Elem.new('title', Text.new("blah blah"))
+	title	= Elem.new('title', "blah blah")
 	content	= Elem.new('p', Text.new("Hello World!"))
 
 	body.add_content(content)

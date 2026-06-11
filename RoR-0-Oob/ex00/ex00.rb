@@ -13,9 +13,8 @@ class Html
 
 	def head(f)
 		f.puts "<!DOCTYPE html>"
-		f.puts "<html lang=\"en\">"
+		f.puts "<html>"
 		f.puts "<head>"
-		f.puts "\t<meta charset=\"UTF-8\">"
 		f.puts "\t<title>#{@page_name}</title>"
 		f.puts "</head>"
 		f.puts "<body>"
