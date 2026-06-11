@@ -63,6 +63,8 @@ class Body_closed < StandardError
 end
 
 class Html
+	attr_reader :page_name
+	
 	def initialize(file)
 		@page_name = file
 

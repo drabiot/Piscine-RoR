@@ -1,6 +1,8 @@
 #!/usr/bin/env -S ruby -w
 
 class Html
+	attr_reader :page_name
+
 	def initialize(file)
 		@page_name = file
 

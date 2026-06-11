@@ -1,6 +1,8 @@
 #!/usr/bin/env -S ruby -w
 
 class Html
+	attr_reader :page_name
+	
 	def initialize(file)
 		@page_name = file
 		raise "A file named #{@page_name}.html already exists" if File.exist?("#{@page_name}.html")
