@@ -1,5 +1,14 @@
 #!/usr/bin/env -S ruby -w
 
+RED		= "\e[31m"
+GREEN	= "\e[32m"
+YELLOW	= "\e[33m"
+ORANGE	= "\e[38;5;208m"
+BLUE	= "\e[34m"
+PURPLE	= "\e[35m"
+CYAN	= "\e[36m"
+BASE	= "\e[0m"
+
 class Text
 	def initialize(string)
 		@string = string
@@ -70,7 +79,7 @@ class Page
 
 	def valid?
 		result = validate_node(@elem)
-		puts result ? "\t\tFILE IS OK" : "\t\tFILE IS INVALID"
+		puts result ? "\t\t#{GREEN}FILE IS OK#{BASE}" : "\t\t#{RED}FILE IS INVALID#{BASE}"
 		return result
 	end
 
@@ -83,21 +92,21 @@ class Page
 
 		case node
 			when Html
-				puts "Currently evaluating a Html :"
-				puts "- root element of type \"html\""
-				puts "- Html -> Must contains a Head AND a Body after it"
+				puts "#{CYAN}Currently evaluating a Html :#{BASE}"
+				puts "#{BLUE}- root element of type \"html\"#{BASE}"
+				puts "#{BLUE}- Html -> Must contains a Head AND a Body after it#{BASE}"
 				
 				content = node.content
 				unless content.is_a?(Array) && content.length == 2 && content[0].is_a?(Head) && content[1].is_a?(Body)
-					puts "Head is INVALID"
+					puts "#{RED}Head is INVALID#{BASE}"
 					return false
 				end
-				puts "Head is OK"
+				puts "#{GREEN}Head is OK#{BASE}"
 
-				puts "Evaluating a multiple node"
+				puts "#{PURPLE}Evaluating a multiple node#{BASE}"
 				head_valid = validate_node(content[0])
 				
-				puts "Evaluating a multiple node"
+				puts "#{PURPLE}Evaluating a multiple node#{BASE}"
 				body_valid = validate_node(content[1])
 				
 				return head_valid && body_valid
@@ -162,23 +171,24 @@ class Page
 				return content.all? { |child| validate_node(child) }
 
 			when Img
-				puts "Currently evaluating a Img :"
+				puts "#{CYAN}Currently evaluating a Img :#{BASE}"
 				src = node.opt[:src] || node.opt['src']
 				unless src && src.is_a?(Text)
+					puts "#{RED}Img content is INVALID#{BASE}"
 					return false
 				end
-				puts "Img content is OK"
+				puts "#{GREEN}Img content is OK#{BASE}"
 				return true
 
 			when Text
-				puts "Currently evaluating a Text :"
-				puts "-Text -> Must contains a simple string"
+				puts "#{CYAN}Currently evaluating a Text :#{BASE}"
+				puts "#{BLUE}-Text -> Must contains a simple string#{BASE}"
 				
 				if node.to_s.is_a?(String)
-					puts "Text content is OK"
+					puts "#{GREEN}Text content is OK#{BASE}"
 					true
 				else
-					puts "Text content is INVALID"
+					puts "#{GREEN}Text content is INVALID#{BASE}"
 					false
 				end
 
