@@ -5,7 +5,7 @@ class Html
 
 	def initialize(file)
 		@page_name = file
-		raise "#{@page_name}.html already exist!" if File.exist?("#{@page_name}.html")
+		raise "A file named #{@page_name}.html already exist!" if File.exist?("#{@page_name}.html")
 
 		File.open("#{@page_name}.html", 'w') do |f|
 			head(f)
