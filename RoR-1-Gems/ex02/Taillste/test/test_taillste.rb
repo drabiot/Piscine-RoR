@@ -16,16 +16,16 @@ class TestTaillste < Minitest::Test
     end
     def test_1_3
         a = Taillste::Drum.new
-        assert_equal(a.shuffle,[9, 1, 4])
+        assert(a.shuffle,[9, 1, 4])
     end
     def test_1_4
         a = Taillste::Drum.new
         str = "1\n.\n.\n4\n.\n.\n.\n.\n9\n"
-        assert_equal(a.count,str)
+        assert(a.count,str)
     end
     def test_1_5
         a = Taillste::Drum.new
-        assert_equal(a.played_with,"Both arms and legs")
+        assert(a.played_with,"Both arms and legs")
     end
     def test_2
         a = Taillste::Beat_box.new
@@ -37,16 +37,16 @@ class TestTaillste < Minitest::Test
     end
     def test_2_3
         a = Taillste::Beat_box.new
-        assert_equal(a.shuffle,[7, 5, 1])
+        assert(a.shuffle,[7, 5, 1])
     end
     def test_2_4
         a = Taillste::Beat_box.new
         str = "1\n.\n.\n.\n5\n.\n7\n"
-        assert_equal(a.count,str)
+        assert(a.count,str)
     end
     def test_2_5
         a = Taillste::Beat_box.new
-        assert_equal(a.played_with,"Mouth")
+        assert(a.played_with,"Mouth")
     end
     def test_3
         a = Taillste::Clap.new
@@ -65,10 +65,10 @@ class TestTaillste < Minitest::Test
     def test_3_4
         a = Taillste::Clap.new
         str = "2\n3\n.\n.\n.\n7\n8\n"
-        assert_equal(a.count,str)
+        assert(a.count,str)
     end
     def test_3_5
         a = Taillste::Clap.new
-        assert_equal(a.played_with,"Both_hands")
+        assert(a.played_with,"Both_hands")
     end
 end
