@@ -1,3 +1,4 @@
+#!/usr/bin/env -S ruby -w
 source "https://rubygems.org"
 
 ruby "3.1.5"

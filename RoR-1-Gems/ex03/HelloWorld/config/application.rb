@@ -1,3 +1,5 @@
+#!/usr/bin/env -S ruby -w
+
 require_relative "boot"
 
 require "rails/all"

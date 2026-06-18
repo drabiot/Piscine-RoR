@@ -1,3 +1,5 @@
+#!/usr/bin/env -S ruby -w
+
 # Pin npm packages by running ./bin/importmap
 
 pin "application"

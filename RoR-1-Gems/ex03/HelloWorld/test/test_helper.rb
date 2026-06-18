@@ -1,3 +1,5 @@
+#!/usr/bin/env -S ruby -w
+
 ENV["RAILS_ENV"] ||= "test"
 require_relative "../config/environment"
 require "rails/test_help"

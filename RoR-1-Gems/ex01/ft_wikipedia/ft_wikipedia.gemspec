@@ -1,3 +1,5 @@
+#!/usr/bin/env -S ruby -w
+
 Gem::Specification.new do |s|
 	s.name			= 'ft_wikipedia'
 	s.version		= '0.0.1'
@@ -10,5 +12,7 @@ Gem::Specification.new do |s|
 	s.files			= Dir.glob("{lib,test}/**/*")
 	s.require_path	= 'lib'
 
+	s.add_development_dependency 'minitest'
+	s.add_development_dependency 'rake'
 	s.add_runtime_dependency 'nokogiri'
 end

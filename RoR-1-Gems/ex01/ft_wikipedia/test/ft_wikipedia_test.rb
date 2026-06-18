@@ -1,3 +1,5 @@
+#!/usr/bin/env -S ruby -w
+
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 require 'minitest/autorun'
 require 'ft_wikipedia'
@@ -12,7 +14,7 @@ class Ft_wikipediaTest < Minitest::Test
 	end
 
 	def test_search_loop
-  		assert_nil Ft_wikipedia.search("Kiss")
+  		assert_equal 20, Ft_wikipedia.search("Kiss")
 	end
 
 	def test_search_working

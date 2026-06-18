@@ -1,3 +1,5 @@
+#!/usr/bin/env -S ruby -w
+
 Gem::Specification.new do |s|
 	s.name			= 'deepthought'
 	s.version		= '0.0.1'
@@ -11,5 +13,6 @@ Gem::Specification.new do |s|
 	s.require_path	= 'lib'
 
 	s.add_development_dependency 'minitest'
+	s.add_development_dependency 'rake'
 	s.add_runtime_dependency 'colorize'
 end

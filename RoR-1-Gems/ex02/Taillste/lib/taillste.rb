@@ -1,3 +1,5 @@
+#!/usr/bin/env -S ruby -w
+
 require_relative "taillste/version"
 
 module Taillste

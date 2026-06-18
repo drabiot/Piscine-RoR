@@ -1,3 +1,5 @@
+#!/usr/bin/env -S ruby -w
+
 require 'colorize'
 
 class Deepthought

@@ -1,3 +1,5 @@
+#!/usr/bin/env -S ruby -w
+
 require "test_helper"
 
 module ApplicationCable
