@@ -1,6 +1,7 @@
 require "test_helper"
 
 module ApplicationCable
+  # Tests for the ActionCable connection authentication logic.
   class ConnectionTest < ActionCable::Connection::TestCase
     # test "connects with cookies" do
     #   cookies.signed[:user_id] = 42
