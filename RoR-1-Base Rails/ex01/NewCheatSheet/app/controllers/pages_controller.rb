@@ -25,6 +25,9 @@ class PagesController < ApplicationController
   def ruby_hashes
   end
 
+  def rails
+  end
+
   def rails_folder_structure
   end
 
