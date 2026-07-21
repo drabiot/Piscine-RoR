@@ -2,9 +2,9 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 
-import jquery from "jquery"
-window.jQuery = jquery
-window.$ = jquery
+import $ from "jquery"
+window.jQuery = $
+window.$ = $
 
 import "bootstrap"
 import "datatables.net-bs4"
