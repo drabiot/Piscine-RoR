@@ -14,4 +14,5 @@ Rails.application.routes.draw do
 	get 'rails-erb', to: 'pages#rails-erb'
 	get 'editor', to: 'pages#editor'
 	get 'help', to: 'pages#help'
+	get 'quick-search', to: 'pages#quick-search'
 end

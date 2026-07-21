@@ -1,0 +1,70 @@
+<tr>
+    <td>Creating</td>
+    <td><code>
+      <strong>{</strong>key <strong>=&gt;</strong> value<strong>}</strong>
+    </code>
+	</p>
+      <p><code>
+        <strong>{</strong>:hobby <strong>=&gt;</strong>
+        "programming"<strong>}</strong>
+      </code></p>
+<pre><code><strong>{</strong>42 <strong>=&gt;</strong> "answer", "score" <strong>=&gt;</strong> 100,
+ :name <strong>=&gt;</strong> "Tobi"<strong>}</strong>
+</code></pre>
+    </td>
+    <td>
+      You create a hash by surrounding the key-value pairs with curly
+      braces. The arrow always goes from the <em>key</em> to the
+      <em>value</em> depicting the meaning: <em>"This key points to this
+      value."</em>. Key-value pairs are then separated by commas.
+    </td>
+  </tr>
+  <tr>
+    <td>Accessing</td>
+    <td><code>hash<strong>[</strong>key<strong>]</strong></code>
+	</p>
+<pre><code>hash = {:key =&gt; "value"}
+hash<strong>[</strong>:key<strong>]</strong> # =&gt; "value"
+hash<strong>[</strong>foo<strong>]</strong> # =&gt; nil
+</code></pre>
+    </td>
+	<td>
+      Accessing an entry in a hash looks a lot like accessing it in
+      an <em>array</em>. However with a hash the key can be anything, not
+      just numbers. If you try to access a key that does not exist, the
+      value <code>nil</code> is returned, which is Ruby's way of saying
+      "nothing", because if it doesn't recognize the key it can't return
+      a value for it.
+    </td>
+  </tr>
+  <tr>
+    <td>Assigning</td>
+    <td>
+      <code>hash<strong>[</strong>key<strong>] =</strong> value</code>
+    </p>
+<pre><code>hash = {:a =&gt; "b"}
+hash<strong>[</strong>:key<strong>] =</strong> "value"
+hash # =&gt; {:a=&gt;"b", :key=&gt;"value"}
+</code></pre>
+    </td>
+    <td>
+      Assigning values to a hash is similar to assigning values to an
+      array. With a hash, the key can
+      be a number or it can be a symbol, string,
+      number... or anything, really!
+    </td>
+  </tr>
+  <tr>
+    <td>Deleting</td>
+    <td><code>hash<strong>.delete</strong><em>(key)</em></code>
+	</p>
+<pre><code>hash = {:a =&gt; "b", :b =&gt; 10}
+hash<strong>.delete</strong><em>(:a)</em>
+hash # =&gt; {:b=&gt;10}
+</code></pre>
+    </td>
+    <td>
+      You can delete a specified key from the hash, so that the key and its
+      value can not be accessed.
+    </td>
+  </tr>

@@ -42,4 +42,7 @@ class PagesController < ApplicationController
 
   def helper
   end
+
+  def quick_search
+  end
 end
