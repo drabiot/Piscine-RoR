@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= content_for?(:title) ? yield(:title) : "CheatSheet" %></title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+  	<header class="site-header">
+		<div class="container">
+	<nav>
+		<div class="navbar navbar-fixed-top navbar-default"><div class="navbar-header"><a href="./" class="navbar-brand cheat-sheet-brand">Rails Beginner Cheat Sheet</a></div>
+
+		<ul class="nav navbar-nav">
+			<li><a href="./console">Console</a></li>
+			<li class="dropdown">
+			<a href="./ruby" class="dropdown-toggle"><b class="caret"></b> Ruby</a>
+			<ul class="dropdown-menu">
+				<li><a href="./ruby-concepts">General Concepts</a></li>
+				<li><a href="./ruby-numbers">Numbers</a></li>
+				<li><a href="./ruby-strings">Strings</a></li>
+				<li><a href="./ruby-arrays">Arrays</a></li>
+				<li><a href="./ruby-hashes">Hashes</a></li>
+			</ul>
+			</li>
+			<li class="dropdown">
+			<a href="./rails"><b class="caret"></b> Rails</a>
+			<ul class="dropdown-menu">
+				<li><a href="./rails-folder-structure">Folder Structure</a></li>
+				<li><a href="./rails-commands">Commands</a></li>
+				<li><a href="./rails-erb">ERB: Embedded Ruby</a></li>
+			</ul>
+			</li>
+			<li><a href="./editor">Editor Tips</a></li>
+			<li><a href="./help">Help</a></li>
+			<li><a href="./quick-search">Quick search</a></li>
+			<li><a href="./log-book">Log Book</a></li>
+		</ul>
+		<ul class="nav pull-right navbar-nav">
+			<li><a>Resources</a></li>
+			<li><a>About</a></li>
+		</ul>
+		</div>
+	</nav>
+	</div>
+	</header>
+    <%= yield %>
+  <footer>
+  <div class="footer-constrain">
+    <p>created by <a href="http://pragtob.info">Tobias Pfeiffer</a></p>
+    <ul class="footer-links">
+      <li><a>About</a></li>
+      <li class="text-muted">·</li>
+      <li><a>Resources</a></li>
+      <li class="text-muted">·</li>
+      <li><a href="http://pragtob.wordpress.com/">Blog</a></li>
+    </ul>
+  </div>
+</footer>
+</body>
+</html>
+

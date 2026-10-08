@@ -1,0 +1,24 @@
+<%# app/views/application/quick-search.html.erb %>
+<% content_for :title, "Quick search" %>
+
+<div class="container mt-4">
+  <table id="quick-search-table" class="table table-bordered table-striped">
+    <thead>
+		<th>name</th>
+		<th>usage / example</th>
+		<th>description</th>
+    </thead>
+    <tbody>
+      <%= render "console_rows" %>
+      <%= render "ruby-concepts_rows" %>
+      <%= render "ruby-numbers_rows" %>
+      <%= render "ruby-strings_rows" %>
+      <%= render "ruby-arrays_rows" %>
+      <%= render "ruby-hashes_rows" %>
+      <%= render "rails-folder-structure_rows" %>
+      <%= render "rails-commands_rows" %>
+      <%= render "rails-erb_rows" %>
+      <%= render "editor_rows" %>
+    </tbody>
+  </table>
+</div>
