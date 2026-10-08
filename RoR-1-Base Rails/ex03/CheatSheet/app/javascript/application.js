@@ -10,3 +10,4 @@ import "bootstrap"
 import "datatables.net-bs4"
 
 import "./quick_search"
+import "./log_book"

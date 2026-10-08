@@ -6959,4 +6959,28 @@ footer {
     top: 95%
 }
 
+#entries {
+    margin-top: 30px;
+}
 
+.entry {
+    background-color: #f79b4f;
+    border: 1px solid #b32e09;
+    border-radius: 6px;
+    color: #fff;
+    padding: 14px 20px;
+    margin-bottom: 24px;
+    font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+    font-size: 17px;
+    line-height: 1.5;
+    word-wrap: break-word;
+    overflow-wrap: anywhere;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.entry .entry-date {
+    display: block;
+    font-size: 13px;
+    opacity: 0.8;
+    margin-bottom: 4px;
+}

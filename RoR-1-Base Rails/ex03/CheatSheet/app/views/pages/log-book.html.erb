@@ -3,17 +3,22 @@
 
 <div class="container mt-4">
   <%= form_tag log_book_path, method: :post, class: 'mb-4' do %>
-    <!-- Remplacement de input-group par des marges pour un meilleur rendu vertical -->
     <div class="mb-3">
       <%= text_area_tag :entry, nil, class: 'form-control',
-                         placeholder: 'Write your entry...', required: true, rows: 5 %>
+                        placeholder: 'Write your entry...', required: true, rows: 5 %>
     </div>
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
       <%= submit_tag 'Write', class: 'btn btn-warning text-white font-weight-bold' %>
     </div>
   <% end %>
 
-  <% (@entries || []).each do |entry| %>
-    <p class="entry border-bottom py-2"><%= entry %></p>
-  <% end %>
+  <div id="entries">
+    <% @entries.each do |entry| %>
+      <% date, _sep, text = entry.partition(' : ') %>
+      <p class="entry">
+        <span class="entry-date"><%= date %></span>
+        <%= text %>
+      </p>
+    <% end %>
+  </div>
 </div>

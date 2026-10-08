@@ -27,3 +27,20 @@ module CheatSheet
     # config.eager_load_paths << Rails.root.join("extras")
   end
 end
+
+LOG_FILE = Rails.root.join('entry_log.txt').to_s
+
+def log_book; end   # affiche juste la vue
+
+def log_book_create
+  text = params[:entry].to_s.strip.gsub(/\s*\n\s*/, ' ')
+  unless text.empty?
+    File.open(LOG_FILE, 'a') { |f| f.puts "#{Time.now.strftime('%d/%m/%Y %H:%M:%S')} : #{text}" }
+  end
+  head :ok
+end
+
+def log_book_entries
+  lines = File.exist?(LOG_FILE) ? File.readlines(LOG_FILE).map(&:chomp).reverse : []
+  render json: lines
+end

@@ -15,5 +15,6 @@ Rails.application.routes.draw do
 	get 'editor', to: 'pages#editor'
 	get 'help', to: 'pages#help'
 	get 'quick-search', to: 'pages#quick-search'
-	get 'log-book', to: 'pages#log-book'
+	get  'log-book', to: 'log_book#index',  as: :log_book
+	post 'log-book', to: 'log_book#create'
 end
